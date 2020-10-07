@@ -137,7 +137,7 @@ def getMessage():
 server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://morning-badlands-73849.herokuapp.com/' + TOKEN)
+    bot.set_webhook(url='https://dry-chamber-52499.herokuapp.com/' + TOKEN)
     return "!", 200
 
 if __name__ == "__main__":
