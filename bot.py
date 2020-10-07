@@ -4,13 +4,11 @@
 import telebot
 from telebot import types
 import math
-from flask import Flask, request
 import os
 
 TOKEN = '1258032906:AAFM6VXY630JpSNUX19w2mFWPUsJI8nXPww'
 
 bot = telebot.TeleBot(TOKEN)
-server = Flask(__name__)
 
 @bot.message_handler(commands = ['start'])
 def welcome(message):
@@ -129,5 +127,5 @@ def lalala(message):
     except:
         bot.send_message(message.chat.id, "{0.first_name}, введіть /help для допомоги".format(message.from_user, bot.get_me()))
 
-if __name__ == '__main__':
-    main()
+
+bot.polling(none_stop = True)
